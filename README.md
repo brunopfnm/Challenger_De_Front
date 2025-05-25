@@ -27,6 +27,11 @@ Navegação Simplificada: Interface intuitiva projetada para atender às necessi
 Tecnologias Utilizadas
 
 
+Estrutura de pasta
+- está totalmente dividida corretamente , html de cada página , css de cada página e o java de cada página necessária 
+ 
+
+
 
 
 
@@ -91,8 +96,10 @@ RM:565249
 
 Prezado Professor Leandro ,
 
-Segue o endereço do repositório do GitHub para o projeto da disciplina [Nome da Disciplina]:
+Segue o endereço do repositório do GitHub para o projeto da disciplina Front-end:
 
+
+https://github.com/brunopfnm/Challenger_De_Front.git
 
 
 O arquivo README.md contém detalhes adicionais sobre o projeto, incluindo as funcionalidades e instruções de uso.
