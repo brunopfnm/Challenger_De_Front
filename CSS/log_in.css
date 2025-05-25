@@ -1,61 +1,149 @@
-body{
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      color: white;
-    }
+/* Reset default margins and ensure box-sizing for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Changed to min-height for flexibility */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
 
+h1 {
+    margin-bottom: 1.875rem; /* 30px, using rem for scalability */
+    font-size: 2rem; /* 2em */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #111;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #f0f;
+    width: 100%;
+    max-width: 400px; /* Limit width for better control */
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem; /* 16px */
+    outline: none; /* Remove default outline for better styling */
+    background-color: #222; /* Darker input background for contrast */
+    color: white; /* Ensure text is visible */
+}
+
+input:focus {
+    box-shadow: 0 0 5px #f0f; /* Add focus state for accessibility */
+}
+
+button {
+    background-color: #ccc;
+    color: #000;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+.toggle {
+    background: none;
+    border: none;
+    color: #f0f;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.9rem; /* Slightly smaller for hierarchy */
+    transition: color 0.3s ease;
+}
+
+.toggle:hover {
+    color: #ff69b4; /* Lighter pink for hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
     h1 {
-      margin-bottom: 30px;
-      font-size: 2em;
+        font-size: 1.5rem; /* Smaller heading for mobile */
     }
 
     .form-container {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      background-color: #111;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px #f0f;
+        padding: 20px;
+        max-width: 90%; /* Responsive width */
     }
 
     input {
-      padding: 10px;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
+        padding: 8px;
+        font-size: 0.9rem;
     }
 
     button {
-      background-color: #ccc;
-      color: #000;
-      border: none;
-      padding: 10px;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #fff;
+        padding: 8px;
+        font-size: 0.9rem;
     }
 
     .toggle {
-      background: none;
-      border: none;
-      color: #f0f;
-      text-decoration: underline;
-      cursor: pointer;
-      margin-top: 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* High contrast for accessibility */
+@media (prefers-contrast: high) {
+    body {
+        background-color: #000;
+        color: #fff;
     }
 
+    .form-container {
+        background-color: #222;
+        box-shadow: 0 0 20px #fff;
+    }
+
+    input {
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+
+    button {
+        background-color: #fff;
+        color: #000;
+    }
+
+    button:hover {
+        background-color: #e0e0e0;
+    }
+
+    .toggle {
+        color: #fff;
+    }
+
+    .toggle:hover {
+        color: #ccc;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    button, .toggle {
+        transition: none; /* Disable transitions */
+    }
+}

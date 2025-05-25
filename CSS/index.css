@@ -1,36 +1,46 @@
-
- body {
+/* Reset default margins and ensure box-sizing for consistency */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-color: #000;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height for better flexibility */
+    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
 }
 
 .container {
     text-align: center;
+    padding: 20px; /* Add padding for smaller screens */
+    max-width: 100%; /* Ensure container doesn't overflow */
 }
 
 .logo {
     width: 100px;
     height: 100px;
-    background: radial-gradient(circle, #ff00ff, #ff69b4 , #00f);
+    background: radial-gradient(circle, #ff00ff, #ff69b4, #00f);
     border-radius: 50%;
     margin: 0 auto 20px;
 }
 
 h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2rem; /* Use rem for better scalability */
+    margin-bottom: 1.5rem;
 }
 
 nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 300px; /* Limit nav width for better control */
+    margin: 0 auto;
 }
 
 nav a {
@@ -42,8 +52,8 @@ nav a {
     color: #000;
     text-decoration: none;
     border-radius: 5px;
-    width: 250px;
-    margin: 0 auto;
+    width: 100%; /* Full width within max-width of nav */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
 nav a:hover {
@@ -51,7 +61,7 @@ nav a:hover {
 }
 
 .social {
-    margin-top: 20px;
+    margin-top: 1.5rem;
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -60,6 +70,55 @@ nav a:hover {
 .social a img {
     width: 30px;
     height: 30px;
+    object-fit: contain; /* Ensure images scale properly */
 }
-    
-    
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    nav a {
+        padding: 8px; /* Slightly smaller padding */
+        font-size: 0.9rem; /* Adjust font size for readability */
+    }
+
+    .logo {
+        width: 80px; /* Smaller logo for mobile */
+        height: 80px;
+    }
+
+    .social a img {
+        width: 25px; /* Smaller social icons */
+        height: 25px;
+    }
+}
+
+/* High contrast for accessibility */
+@media (prefers-contrast: high) {
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+
+    nav a {
+        background-color: #fff;
+        color: #000;
+    }
+
+    nav a:hover {
+        background-color: #e0e0e0;
+    }
+}
+
+/* Ensure compatibility for older browsers */
+@-webkit-keyframes gradient {
+    /* For older WebKit browsers */
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}

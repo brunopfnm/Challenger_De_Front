@@ -1,72 +1,159 @@
-.logo {
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, #ff00ff, #ff69b4 , #00f);
-    border-radius: 50%;
-    margin: 0 auto 20px;
+/* Reset default margins and ensure box-sizing for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.card img{
-    width: 150px;
-    size: 150px;
-}
-
-
 
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex; /* Use Flexbox to center content */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    min-height: 100vh; /* Allow content to expand */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .container {
-  padding: 40px 20px;
+    padding: 40px 20px;
+    max-width: 100%; /* Prevent overflow */
+    display: flex; /* Use Flexbox for container */
+    flex-direction: column; /* Stack logo, h1, cards, button */
+    align-items: center; /* Center content horizontally */
+    gap: 20px; /* Space between elements */
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #ff00ff, #ff69b4, #00f);
+    border-radius: 50%;
+    margin: 0 auto 20px; /* Keep existing margin */
 }
 
 h1 {
-  font-size: 36px;
-  margin-bottom: 40px;
+    font-size: 2.25rem; /* 36px, using rem for scalability */
+    margin-bottom: 2.5rem; /* 40px */
 }
 
 .card {
-  background-color: #111;
-  border: 1px solid #444;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 400px;
-  box-shadow: 0 0 10px #444;
+    background-color: #111;
+    border: 1px solid #444;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0 0 10px #444;
+    display: flex; /* Use Flexbox for card content */
+    flex-direction: column; /* Stack image, h2, a vertically */
+    align-items: center; /* Center content */
+    gap: 10px; /* Space between card elements */
+}
+
+.card img {
+    width: 150px;
+    height: 150px; /* Fixed 'size' to 'height' */
+    object-fit: cover; /* Ensure proper image scaling */
 }
 
 .card h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+    font-size: 1.5rem; /* 24px */
+    margin-bottom: 10px;
 }
 
 .card a {
-  color: #8ab4f8;
-  text-decoration: none;
+    color: #8ab4f8;
+    text-decoration: none;
 }
 
 .card a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 button {
-  background-color: #ccc;
-  color: #000;
-  font-size: 16px;
-  padding: 10px 30px;
-  margin-top: 30px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+    background-color: #ccc;
+    color: #000;
+    font-size: 1rem; /* 16px */
+    padding: 10px 30px;
+    margin-top: 1.875rem; /* 30px */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 button:hover {
-  background-color: #bbb;
+    background-color: #bbb;
 }
 
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.75rem; /* Smaller font for mobile */
+    }
+
+    .container {
+        padding: 20px 10px; /* Reduced padding */
+    }
+
+    .card {
+        max-width: 90%; /* Responsive card width */
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .card img {
+        width: 120px; /* Smaller image for mobile */
+        height: 120px;
+    }
+
+    .card h2 {
+        font-size: 1.25rem; /* Smaller heading */
+    }
+
+    button {
+        padding: 8px 20px; /* Smaller button */
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        width: 80px; /* Smaller logo */
+        height: 80px;
+    }
+}
+
+/* High contrast for accessibility */
+@media (prefers-contrast: high) {
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .card {
+        background-color: #222;
+        border-color: #fff;
+    }
+
+    button {
+        background-color: #fff;
+        color: #000;
+    }
+
+    button:hover {
+        background-color: #e0e0e0;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .logo {
+        background: #ff69b4; /* Static fallback color */
+    }
+
+    button {
+        transition: none; /* Disable transitions */
+    }
+}
