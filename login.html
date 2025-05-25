@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in/Criar conta</title>
+    <link rel="stylesheet" href="CSS/log_in.css"/>
+    <link rel="stylesheet" href="JS/log_in.js"/>
+</head>
+<body>
+    
+</html><div class="logo"></div>
+  <h1>PromptMedic</h1>
+
+  <div class="form-container" id="form-login">
+    <input type="email" placeholder="E-mail" id="login-email">
+    <input type="password" placeholder="Senha" id="login-password">
+    <button onclick="login()">Entrar</button>
+    <button class="toggle" onclick="mostrarCadastro()">Criar nova conta</button>
+  </div>
+
+  <div class="form-container" id="form-cadastro" style="display: none;">
+    <input type="text" placeholder="Nome completo" id="cadastro-nome">
+    <input type="email" placeholder="E-mail" id="cadastro-email">
+    <input type="password" placeholder="Senha" id="cadastro-senha">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button class="toggle" onclick="mostrarLogin()">Já tenho conta</button>
+  </div>
+  </body>
