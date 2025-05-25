@@ -1,0 +1,51 @@
+
+body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+    }
+    .logo {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #ff00ff, #ff69b4 , #00f);
+      border-radius: 50%;
+      margin: 20px auto;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    button {
+      display: block;
+      width: 80%;
+      margin: 10px auto;
+      padding: 15px;
+      background-color: #ccc;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #bbb;
+    }
+    .social {
+      margin-top: 20px;
+    }
+    .social a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.2em;
+    }
+    .social a:hover {
+      color: #ff69b4;
+    }
